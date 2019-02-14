@@ -1,0 +1,12 @@
+server:
+  port: 81
+  
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://ddxx:123456@localhost:8761/eureka/
+
+#负载均衡      
+microcloud-provider-dept-8001:
+  ribbon:
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule      
