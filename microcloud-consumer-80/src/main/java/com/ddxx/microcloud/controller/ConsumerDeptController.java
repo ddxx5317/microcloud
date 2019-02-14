@@ -50,6 +50,16 @@ public class ConsumerDeptController {
 		return userClient.getDeptlist();
 	}
 	
+	@RequestMapping(value="/test-post",method=RequestMethod.POST)
+	public Dept dept(Dept dept) {
+		return userClient.postDept(dept);
+	}
+	
+	@GetMapping("/test-get")
+	public Dept testGet(Dept dept) {
+	   return userClient.getDept(dept);
+	}
+	
 	@RequestMapping(value = "/consumer/dept/get")
 	public Object getDept(long id) {
 		Dept dept = this.restTemplate
