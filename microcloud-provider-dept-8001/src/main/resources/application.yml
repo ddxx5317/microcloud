@@ -19,12 +19,13 @@ spring:
       max-wait-millis: 200                          # 等待连接获取的最大超时时间     
   application:
     name: microcloud-provider-dept-8001
+
 eureka:
   client: 
     register-with-eureka: true
-    fetch-registry: false
+    fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://ddxx:123456@localhost:8761/eureka/
     
   instance:
     prefer-ip-address: true

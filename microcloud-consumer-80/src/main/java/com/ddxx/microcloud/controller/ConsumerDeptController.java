@@ -8,9 +8,11 @@ import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+import com.ddxx.microcloud.client.UserClient;
 import com.ddxx.vo.Dept;
 
 @RestController
@@ -18,10 +20,21 @@ public class ConsumerDeptController {
 	public static final String DEPT_GET_URL = "http://dept-8001.com:8001/dept/get/";
 	public static final String DEPT_LIST_URL = "http://dept-8001.com:8001/dept/list/";
 	public static final String DEPT_ADD_URL = "http://dept-8001.com:8001/dept/add?dname=";
+	
 	@Resource
 	private RestTemplate restTemplate;
+	
 	@Resource
 	private HttpHeaders headers;
+	
+	@Resource
+	private UserClient userClient;
+	
+	@RequestMapping(value="/list",method=RequestMethod.GET)
+	public List<Dept> list() {
+		return userClient.getDeptlist();
+	}
+	
 	@RequestMapping(value = "/consumer/dept/get")
 	public Object getDept(long id) {
 		Dept dept = this.restTemplate
