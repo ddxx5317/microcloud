@@ -15,6 +15,7 @@
 		<module>microcloud-consumer-81</module>
 		<module>microcloud-security</module>
 		<module>microcloud-eureka</module>
+		<module>microcloud-provider-dept-hystrix-8001</module>
 	</modules>
 	
 	<properties>
