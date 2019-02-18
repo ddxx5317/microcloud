@@ -24,7 +24,7 @@ public class DeptRest {
 	}
 	@HystrixCommand(fallbackMethod="getFallback")    // 如果当前调用的get()方法出现了错误，则执行fallback
 	@RequestMapping(value="/dept/get/{id}",method=RequestMethod.GET)
-	public Object get(@PathVariable("id") long id) {
+	public Dept get(@PathVariable("id") long id) {
         Dept vo = this.deptService.get(id) ;    // 接收数据库的查询结果
         if (vo == null) {    // 数据不存在，假设让它抛出个错误
             throw new RuntimeException("部门信息不存在！") ;
@@ -40,7 +40,7 @@ public class DeptRest {
 		return this.deptService.list() ;
 	}
 	
-    public Object getFallback(@PathVariable("id") long id) {    // 此时方法的参数 与get()一致
+    public Dept getFallback(@PathVariable("id") long id) {    // 此时方法的参数 与get()一致
         Dept vo = new Dept() ;
         vo.setDeptno(999999L);
         vo.setDname("【ERROR】Microcloud-Dept-Hystrix");    // 错误的提示
