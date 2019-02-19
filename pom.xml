@@ -20,6 +20,10 @@
 		<module>microcloud-consumer-hystrix</module>
 		<module>microcloud-consumer-feign-hystrix-fallback-factory</module>	
 		<module>microcloud-hystrix-turbine</module>	
+		<module>microcloud-geteway-zuul</module>	
+		<module>microcloud-provider-dept-without-auth</module>	
+		<module>microcloud-file-upload</module>	
+		
 	</modules>
 	
 	<properties>

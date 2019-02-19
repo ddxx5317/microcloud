@@ -1,0 +1,14 @@
+server:
+  port: 8050
+spring:
+  application:
+    name:  microcloud-file-upload   
+  http:
+    multipart:
+      max-file-size: 2000Mb
+      max-request-size:  2500Mb
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://ddxx:123456@localhost:8761/eureka/
+      

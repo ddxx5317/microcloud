@@ -12,6 +12,3 @@ eureka:
     instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
     lease-renewal-interval-in-seconds: 30
     lease-expiration-duration-in-seconds: 90       
-feign:
- hystrix:
-    enabled: true 
