@@ -17,6 +17,9 @@
 		<module>microcloud-eureka</module>
 		<module>microcloud-provider-dept-hystrix-8001</module>
 		<module>microcloud-hystrix-dashboard</module>
+		<module>microcloud-consumer-hystrix</module>
+		<module>microcloud-consumer-feign-hystrix-fallback-factory</module>	
+		<module>microcloud-hystrix-turbine</module>	
 	</modules>
 	
 	<properties>
