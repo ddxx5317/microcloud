@@ -1,0 +1,32 @@
+server:
+  port: 8070
+spring:
+  application:
+    name: microcloud-geteway-zuul-fallback
+   
+eureka:
+  client: 
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://ddxx:123456@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90 
+    
+management: 
+   security: 
+     enabled: false
+     
+zuul: 
+  prefix: /dept  #http://gateway.com:8040/dept/dept-noAuth/get/2 -- http://gateway.com:8040/dept-noAuth/dept/get/2
+  strip-prefix: false
+  ignored-services: '*'
+  routes:
+    microcloud-provider-dept-without-auth: 
+      path: /dept-noAuth/**
+      sensitive-headers: Cookie,Set-Cookie,Authorization
+      
+    

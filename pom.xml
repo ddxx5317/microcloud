@@ -23,7 +23,12 @@
 		<module>microcloud-geteway-zuul</module>	
 		<module>microcloud-provider-dept-without-auth</module>	
 		<module>microcloud-file-upload</module>	
-		
+		<module>microcloud-geteway-zuul-filter</module>	
+		<module>microcloud-geteway-zuul-fallback</module>	
+		<module>microcloud-geteway-zuul-aggergation</module>	
+		<module>microcloud-config-server</module>	
+		<module>microcloud-config-client</module>	
+
 	</modules>
 	
 	<properties>

@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: microcloud-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ddxx5317/spring-cloud-config-repo
+          username: ddxx5317@163.com
+          password: Zhaoxw2019!
+   
+eureka:
+  client: 
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://ddxx:123456@localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${server.port}}
+    lease-renewal-interval-in-seconds: 30
+    lease-expiration-duration-in-seconds: 90 
+    
+management: 
+   security: 
+     enabled: false    
+    
