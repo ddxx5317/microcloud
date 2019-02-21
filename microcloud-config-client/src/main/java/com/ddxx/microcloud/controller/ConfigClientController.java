@@ -14,9 +14,22 @@ public class ConfigClientController {
 	
 	@Value("${url}")
 	private String url;
+	
+	@Value("${password}")
+	private String password;
 
 	@GetMapping("/profile")
 	public String hello() {
 		return this.profile+":"+StringUtils.trimToEmpty(this.url);
+	}
+	
+	@GetMapping("/encrypt")
+	public String encrypt() {
+		return this.profile+":"+StringUtils.trimToEmpty(this.url)+":"+this.password;
+	}
+	
+	@GetMapping("/decrypt")
+	public String decrypt() {
+		return this.profile+":"+StringUtils.trimToEmpty(this.url)+":"+this.password;
 	}
 }

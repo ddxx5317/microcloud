@@ -1,8 +1,8 @@
 server:
-  port: 8081
+  port: 8088
 spring:
   application:
-    name: microcloud-config-server
+    name: microcloud-config-server-rsa
   cloud:
     config:
       server:
@@ -25,8 +25,11 @@ eureka:
     
 management: 
    security: 
-     enabled: false    
-    
-
+     enabled: false  
+     
 encrypt:
-  key: keyddxx201900001
+  key-store:
+    location: classpath:/config_server.jks     #Keystore 的文件路径
+    password: ddxx2019                         #keystore 的密码
+    alias: myConfigkey                         #key 的别名
+    secret: ddxx2018                           #key的密码       

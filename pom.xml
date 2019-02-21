@@ -28,7 +28,7 @@
 		<module>microcloud-geteway-zuul-aggergation</module>	
 		<module>microcloud-config-server</module>	
 		<module>microcloud-config-client</module>	
-
+		<module>microcloud-config-server-rsa</module>	
 	</modules>
 	
 	<properties>
