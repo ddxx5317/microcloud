@@ -31,7 +31,8 @@
 		<module>microcloud-config-server-rsa</module>	
 		<module>microcloud-config-client-bus</module>	
 		<module>microcloud-config-client-bus-copy</module>	
-		<module>microcloud-config-server-bus</module>		
+		<module>microcloud-config-server-bus</module>
+		<module>microcloud-config-client-bus-enreka</module>
 	</modules>
 	
 	<properties>

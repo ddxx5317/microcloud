@@ -1,0 +1,23 @@
+spring:  
+  cloud:
+    config:
+      name: database,myconfig          # 对应config server所获取的配置文件的{application}
+      profile: dev            # profile对应config server所获取的配置文件中的{profile} 
+      label: master           # 指定Git仓库的分支，对应config server所获取的配置文件的{label}
+#      uri: http://ddxx:123456@localhost:8088/
+      username: ddxx
+      password: 123456
+      discovery:
+        enabled: true
+        service-id: microcloud-config-server-bus
+
+  rabbitmq: 
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+
+eureka:
+  client: 
+    service-url:
+      defaultZone: http://ddxx:123456@localhost:8761/eureka/        
