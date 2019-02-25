@@ -33,6 +33,13 @@
 		<module>microcloud-config-client-bus-copy</module>	
 		<module>microcloud-config-server-bus</module>
 		<module>microcloud-config-client-bus-enreka</module>
+		<module>microcloud-provider-dept-sleuth</module>
+		<module>microcloud-consumer-sleuth</module>
+		<module>microcloud-zipkin-server</module>	
+		<module>microcloud-provider-dept-zipkin</module>
+		<module>microcloud-zipkin-server-stream</module>
+		<module>microcloud-provider-dept-zipkin-stream</module>
+
 	</modules>
 	
 	<properties>
